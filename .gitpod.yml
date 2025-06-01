@@ -24,5 +24,9 @@ tasks:
       echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
       source ~/.bashrc
       echo "✅ direnv hook added and sourced"
+  - name: List Java Env
+    init: |
+      echo "📦 Listing Java Env..."
+      sdk current
 
   
