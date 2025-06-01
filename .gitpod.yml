@@ -3,48 +3,7 @@ image: gitpod/workspace-java-21
 tasks:
   - name: Install direnv
     init: |
-      chmod +x ./install-direnv.sh
       ./install-direnv.sh
     
 
-  # --- Task: List Installed Java Versions ---
-  - name: List Installed Java Versions
-    init: |
-      echo "🔍 Checking for installed Java versions via SDKMAN..."
-
-      # Load SDKMAN if not already loaded
-      if [ -d "$HOME/.sdkman" ]; then
-        export SDKMAN_DIR="$HOME/.sdkman"
-        source "$SDKMAN_DIR/bin/sdkman-init.sh"
-      else
-        echo "❌ SDKMAN not found. Please install SDKMAN first."
-        exit 1
-      fi
-
-      # List only installed Java versions
-      sdk list java | grep 'installed'
-
-  # --- Task: Show Current Java Environment ---
-  - name: Show Current Java Environment
-    init: |
-      echo "🌐 Checking current Java environment..."
-
-      # Load SDKMAN
-      if [ -d "$HOME/.sdkman" ]; then
-        export SDKMAN_DIR="$HOME/.sdkman"
-        source "$SDKMAN_DIR/bin/sdkman-init.sh"
-      else
-        echo "❌ SDKMAN not found. Please install SDKMAN first."
-        exit 1
-      fi
-
-      # Get current/default Java version
-      CURRENT_JAVA=$(sdk current java 2>/dev/null)
-
-      if [[ "$CURRENT_JAVA" == *"No version set"* ]]; then
-        echo "⚠️ No Java version is currently set via SDKMAN."
-      else
-        echo "✅ Current Java version:"
-        echo "$CURRENT_JAVA"
-        java -version
-      fi
+  
