@@ -1,5 +1,3 @@
-image: gitpod/workspace-java-21
-
 tasks:
   - name: Setup direnv
     init: |
@@ -39,14 +37,15 @@ tasks:
 
       cat >> "$PROFILE_FILE" <<EOL
 
-      # direnv initialization
-      eval "\$(direnv hook $SHELL_TYPE)"
-      EOL
+# direnv initialization
+eval "\$(direnv hook $SHELL_TYPE)"
+EOL
 
-            source "$PROFILE_FILE"
+      source "$PROFILE_FILE"
 
-            echo "✅ direnv hook added to $PROFILE_FILE and sourced."
-            echo "🎉 direnv is now set up for $SHELL_TYPE"
+      echo "✅ direnv hook added to $PROFILE_FILE and sourced."
+      echo "🎉 direnv is now set up for $SHELL_TYPE"
+
 
   # --- Task: List Installed Java Versions ---
   - name: List Installed Java Versions
