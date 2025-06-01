@@ -4,8 +4,6 @@ vscode:
     extensions:
         - vscjava.vscode-java-pack
         - pleiades.java-extension-pack-jdk
-        - formulahendry.code-runner
-
 tasks:
   - name: Install shellcheck
     init: |
