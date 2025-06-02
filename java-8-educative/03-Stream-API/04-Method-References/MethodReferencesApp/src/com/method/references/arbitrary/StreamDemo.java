@@ -1,4 +1,4 @@
-package com.arbitrary;
+package com.method.references.arbitrary;
 
 import java.util.ArrayList;
 import java.util.List;

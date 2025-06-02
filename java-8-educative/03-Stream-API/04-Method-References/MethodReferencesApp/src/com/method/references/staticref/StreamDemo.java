@@ -1,11 +1,11 @@
-package com.instancemethodreference;
+package com.method.references.staticref;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StreamDemo {
 
-    public int getLength(String str) {
+    public static int getLength(String str){
         return str.length();
     }
 
@@ -16,15 +16,14 @@ public class StreamDemo {
         list.add("practice");
         list.add("fake");
 
-        StreamDemo demo = new StreamDemo();
-        // Code without instance method reference.
+        // Code without using method reference.
         list.stream()
-                .mapToInt(str ->  demo.getLength(str))
+                .mapToInt(str -> StreamDemo.getLength(str))
                 .forEach(System.out::println);
 
-        // Code with instance method reference.
+        // Code with method reference.
         list.stream()
-                .mapToInt(demo::getLength)
+                .mapToInt(StreamDemo::getLength)
                 .forEach(System.out::println);
 
     }
